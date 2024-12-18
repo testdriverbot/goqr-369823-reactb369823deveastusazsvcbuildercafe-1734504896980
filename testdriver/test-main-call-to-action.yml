@@ -1,0 +1,17 @@
+version: 4.1.30
+steps:
+  - prompt: Focus the browser window.
+    commands: []
+  - prompt: Locate the "Log In" button on the webpage.
+    commands:
+      - command: hover-text
+        text: Log In
+        description: log in button on the webpage
+        action: click
+  - prompt: >-
+      Assert that clicking the "Log In" button redirects to the login page or
+      initiates the login process.  # Use the content of the file from the
+      environment
+    commands:
+      - command: assert
+        expect: the login page is displayed with email and password fields
